@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Eduplus
+    = include_gon init: true
+    / = Gon::Base.render_data({})
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    javascript:
+      var image1 = "#{image_url('1.jpg')}";
+      var image2 = "#{image_url('2.jpg')}";
+      var overlay = "#{image_url('overlays/05.png')}";
+  body
+    #menu-section.navbar.navbar-inverse.navbar-fixed-top.scroll-me
+      .container
+        .navbar-header
+          button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button" 
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand href="#" 
+            | Edu Plus
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a href="#home"  HOME
+            li
+              a href="#services"  POSTS
+            li
+              a href="#pricing"  CATEGORIES
+            li
+              a href="#work"  ABOUT
+            li
+              a href="#contact"  CONTACT
+    = yield
+    section#contact
+      .container
+        .row.text-center.header.animate-in data-anim-type="fade-in-up" 
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            h3 Contact Details
+            hr/
+        .row.animate-in data-anim-type="fade-in-up" 
+          .col-xs-12.col-sm-4.col-md-4.col-lg-4
+            .contact-wrapper
+              h3 We Are Social
+              p
+                | Aliquam tempus ante placerat, consectetur tellus nec, porttitor nulla.
+              .social-below
+                a.btn.button-custom.btn-custom-two href="#"  Facebook
+                a.btn.button-custom.btn-custom-two href="#"  Twitter
+                a.btn.button-custom.btn-custom-two href="#"  Google +
+          .col-xs-12.col-sm-4.col-md-4.col-lg-4
+            .contact-wrapper
+              h3 Quick Contact
+              h4
+                strong Email :
+                | info@yuordomain.com
+              h4
+                strong Call :
+                | +09-88-99-77-55
+              h4
+                strong Skype :
+                | Yujhaeu78
+          .col-xs-12.col-sm-4.col-md-4.col-lg-4
+            .contact-wrapper
+              h3 Address :
+              h4 230/45 , New way Lane ,
+              h4 United States

@@ -1,0 +1,38 @@
+#home
+  .container
+    .row
+      .col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.col-lg-8.col-lg-offset-2
+        #carousel-slider.carousel.slide.animate-in data-anim-type="fade-in-up" data-ride="carousel" 
+          .carousel-inner
+            .item.active
+              h2
+                = @blog_post.title
+            /   p style=("font-size: 30px") 
+            /     | &#x201C;Live as if you were to die tomorrow. Learn as if you were to live forever.&#x201D;
+            / .item
+            /   h2
+            /     | &#x2015; Nelson Mandela
+            /   p style=("font-size: 30px") 
+            /     | &#x201C;Education is the most powerful weapon which you can use to change the world.&#x201D;
+    .row.animate-in data-anim-type="fade-in-up" 
+      .col-sm-6.col-sm-offset-3.col-md-6.col-md-offset-3.col-lg-8.col-lg-offset-2.scroll-me
+        p
+          | Learn all before you dead
+        .social
+          a.btn.button-custom.btn-custom-one href="#" 
+            i.fa.fa-facebook
+          a.btn.button-custom.btn-custom-one href="#" 
+            i.fa.fa-twitter
+          a.btn.button-custom.btn-custom-one href="#" 
+            i.fa.fa-google-plus
+          a.btn.button-custom.btn-custom-one href="#" 
+            i.fa.fa-linkedin
+          a.btn.button-custom.btn-custom-one href="#" 
+            i.fa.fa-pinterest
+          a.btn.button-custom.btn-custom-one href="#" 
+            i.fa.fa-github
+        a.btn.button-custom.btn-custom-two href="#services"  See Post List
+/! HOME SECTION END
+/! SERVICE SECTION START
+- @paragraphs.each do |p|
+  = render partial: "partial/para_style_#{p.post_style_id}", locals: {p: p}

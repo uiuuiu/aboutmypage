@@ -1,0 +1,35 @@
+javascript:
+  var index = 0
+  add_para = function()
+    {  
+      index = index +1
+      $('#paragraph_div').append("#{ escape_javascript(render partial: 'form_paragraph') }");
+    }
+section#work
+  .container
+    .row.text-center.header
+      h1 New Post
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12.animate-in data-anim-type="fade-in-up" 
+        h1 Create Your New Post
+        hr
+      .row.animate-in data-anim-type="fade-in-up" 
+        .col-xs-12
+          .light-pricing.popular.col-xs-12
+            = form_tag(blog_posts_path, method: :post, multipart: true)
+              .col-lg-12
+                h3 Post title
+              .row
+                .col-lg-3
+                .col-lg-6
+                  = text_field_tag :title, '', {rows: "2", type: "text", class: "form-control"}
+              .row#paragraph_div
+                = render partial: 'form_paragraph'
+              .row
+                .col-lg-3
+                .col-lg-6
+                  button.btn.btn-default.btn-lg.btn-round#btn_add onclick="add_para();" type="button"
+                    span.glyphicon.glyphicon-plus aria-hidden="true"
+              .row
+                .col-lg-3
+                .col-lg-6
+                  = submit_tag "Create", class: "btn btn-default btn-lg btn-primary"
